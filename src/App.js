@@ -11,7 +11,13 @@ var emojiDictionary = {
   "😱": "Shocked Emoji",
   "😡": "Angry Face Emoji",
   "😎": "Smiling Face With Sunglasses",
-  "😨": "Scared Emoji"
+  "😨": "Scared Emoji",
+  "🚣": "Person Rowing Boat",
+  "🗾": "Map of Japan",
+  // "🏔️": "Snow-Capped Mountain",
+  "⛰️": "Mountain",
+  "🌋": "Volcano",
+  "🗻": "Mount Fuji",
 };
 
 var emojiWeKnow = Object.keys(emojiDictionary);
@@ -35,20 +41,16 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>inside outt</h1>
-
-      <div>
-        <input onChange={inputChangeHandler}></input>
-      </div>
-      <h2>
-        <div>{meaning}</div>
-      </h2>
-
-      <h3>emoji we know</h3>
+      <h1 className="heading">Welcome To EmoTrans</h1>
+      <p className="subText">Emoji Translator</p>
+      <input className="inputBox" onChange={inputChangeHandler}></input>
+      <div className="output">{meaning}</div>
+      <h3 className="subText">emoji we know</h3>
       <span>
         {emojiWeKnow.map(function (emoji) {
           return (
             <span
+              className="emojisWeKnow"
               key={emoji}
               onClick={() => emojiClickHandler(emoji)}
               style={{ fontSize: "2rem", padding: "0.5rem", cursor: "pointer" }}
